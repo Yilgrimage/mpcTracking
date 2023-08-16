@@ -1,23 +1,27 @@
 # mpcTracking
+## Background
+MPC(Model predictive control) is widely used in robotics. this work uses MPC for path tracking of a two-wheeled differential cart in a simulation environment, and it is made to adapt to any path.
 
-MPC(Model predictive control) is widely used in robotics. this work uses MPC for path tracking of a two-wheeled differential cart in a simulation environment,and it is made to adapt to any path.
+this work is based on [turtle3](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/)(which support simulation sources) and [osqp-eigen](https://github.com/robotology/osqp-eigen), you may get more infomation in their website. Btw if you are new for MPC, you should learn it quickly in [Model Predictive Control](https://www.bilibili.com/video/BV1HQ4y1P7bJ/?share_source=copy_web&vd_source=9ccc920bc6359b6c70aeb81313354624)(but please note the difference between models), after that you may understand how it works. There is other site teach you how to [cast MPC to QP](https://robotology.github.io/osqp-eigen/md_pages_mpc.html) with osqp-eigen.
 
-this work is based on turtle3(which support simulation sources) and osqp-eigen. Therefore, for you to be able to use this work correctly, please note the following points:
+## Install
+ for you to be able to use this work correctly, please note the following points:
 
-- it only work on ubuntu20.04, with ros-noetic
+- it only work on ubuntu20.04, with ros-noetic-fulldesktop.
 * ensure download all submoudles correctly
 + ensure your osqp-eigen lib is installed properly
-- check all the path(maybe noetic path,lib path and so on)
+- check all the path(noetic path,lib path and so on)
 
-## How it works? 
+It is easy to configuration environment, you can find comprehensive and correct installation guide in their Github Page or stackflow.
+
+
+
+## Usage
+### How to use it?
 task1 is a simple work to test your env is right. It is implemented to allow the cart model to travel to a set position, which is, of course, entered by the keyboard,with a simple pid controller. Just run it to test.
+
         $roslaunch task1_pkg turtle3_test.launch
-Obviously, task2 is the "protagonists", it
-
-## How to use it?
-
-
-There is currently no launch file written to start all nodes, you may need to do this manually, follow these steps：
+About task2, there is currently no launch file to start all nodes automatically for some reason, you may need to do this manually, follow these steps：
 1. go to the main folder
 
         $ cd path/to/work
@@ -35,10 +39,13 @@ There is currently no launch file written to start all nodes, you may need to do
    
         $rosrun task2_pkg control
 
-## How to redevelop it?
+### How to redevelop it?
 
-For simple redesign, you only need pay attention to creatPath() in control_node.cpp, setWeightMatrices() and setInequalityConstraints() in mpc.cpp. it is very easy to resetting the path and adjusting the parameters of the controller.
+For simple redesign, you only need pay attention to _creatPath()_ in _control_node.cpp_, _setWeightMatrices()_ and _setInequalityConstraints()_ in _mpc.cpp_. it is very easy to resetting the path and adjusting the parameters of the controller.
 
+## Maintain
+
+Yilgrimage
 
 
 
