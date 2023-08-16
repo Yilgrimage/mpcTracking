@@ -17,6 +17,8 @@
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
-  <!-- <node pkg="test_pkg" type="control.py" name="turtle_control" /> -->
+  <node pkg="task1_pkg" type="control.py" name="turtle_control" />
+  <node pkg="task1_pkg" type="teleop.py" name="turtle_input" />
+
   
 </launch>
