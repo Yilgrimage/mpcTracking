@@ -20,7 +20,8 @@ It is easy to configuration environment, you can find comprehensive and correct 
 ### How to use it?
 task1 is a simple work to test your env is right. It is implemented to allow the cart model to travel to a set position, which is, of course, entered by the keyboard,with a simple pid controller. Just run it to test.
 
-        $roslaunch task1_pkg turtle3_test.launch
+        $ export TURTLEBOT3_MODEL=burger
+        $ roslaunch task1_pkg turtle3_test.launch
 About task2, there is currently no launch file to start all nodes automatically for some reason, you may need to do this manually, follow these steps：
 1. go to the main folder
 
